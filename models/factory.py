@@ -37,7 +37,7 @@ class ChatModelFactory:
         elif model_name == "qwen":
             return ChatOpenAI(
                 model="qwen-plus",  # 模型名称
-                openai_api_key="sk-0c1263af6f6f44bf85f4d738a418d9f4",  # 在平台注册账号后获取
+                openai_api_key="",  # 在平台注册账号后获取
                 openai_api_base="https://dashscope.aliyuncs.com/compatible-mode/v1",  # 平台 API 地址
                 **cls.model_params,
             )
