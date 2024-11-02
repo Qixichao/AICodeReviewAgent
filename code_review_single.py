@@ -26,7 +26,7 @@ class CodeReviewAgent:
     def __init__(
             self,
             llm: BaseChatModel = ErnieBotChat(
-                aistudio_access_token="ecdaa00a52ce7eaea15d69bc91d9d8a23c538f04",
+                aistudio_access_token="",
                 api_type="aistudio",
                 model="ernie-3.5"
             ),
@@ -40,7 +40,7 @@ class CodeReviewAgent:
         self.robust_parser = OutputFixingParser.from_llm(
             parser=self.output_parser,
             llm=ErnieBotChat(
-                aistudio_access_token="ecdaa00a52ce7eaea15d69bc91d9d8a23c538f04",
+                aistudio_access_token="",
                 api_type="aistudio",
                 model="ernie-3.5"
             )

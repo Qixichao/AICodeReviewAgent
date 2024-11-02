@@ -23,7 +23,7 @@ class AgentOutputParser(AgentOutputParser):
     __action_parser = OutputFixingParser.from_llm(
         parser=PydanticOutputParser(pydantic_object=AgentActionWrapper),
         llm=ErnieBotChat(
-            aistudio_access_token="ecdaa00a52ce7eaea15d69bc91d9d8a23c538f04",
+            aistudio_access_token="",
             api_type="aistudio",
             model="ernie-3.5"
         )
@@ -98,7 +98,7 @@ def run_agent(agent, tools):
 def main():
     # 语言模型
     llm = ErnieBotChat(
-        aistudio_access_token="ecdaa00a52ce7eaea15d69bc91d9d8a23c538f04",
+        aistudio_access_token="",
         api_type="aistudio",
         model="ernie-3.5"
     )
