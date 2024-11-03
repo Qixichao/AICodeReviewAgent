@@ -88,8 +88,3 @@ def read_item_from_word_element(path):
                     filecontent += tbl_element.text
 
     return filecontent
-
-
-#print(read_from_file_raw('../docs/代码编写规范.pdf'))
-#print(read_from_file_raw('../docs/代码编写规范.docx'))
-#pdf_to_text('../docs/代码编写规范.pdf')

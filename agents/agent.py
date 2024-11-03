@@ -171,6 +171,12 @@ class AIAgent:
                 verbose=verbose,
             )
 
+            # 如果Response里包含FINISH，那么也认为分析结束
+            if response.find("FINISH") > -1:
+                reply = response[response.index("### 代码评审过程和结果"):-1]
+                reply = reply.replace('```python','').replace('```','')
+                break
+
             # 如果是结束指令，执行最后一步
             if action.name == "FINISH":
                 reply = self.__exec_action(action)
@@ -193,7 +199,7 @@ class AIAgent:
 
         if thought_step_count >= self.max_thought_steps:
             # 如果思考步数达到上限，返回错误信息
-            reply = reply + "\n根据代码编程规范找到以上问题。"
+            reply = reply + "\n"
 
         # 更新长时记忆
         chat_history.add_user_message(task)
